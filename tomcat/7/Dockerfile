@@ -1,5 +1,6 @@
 FROM tomcat:7
 LABEL godasisatish "godasisatish"
+ENV PATH /docker-java-home/bin:$PATH
 RUN \
   export JAVA_HOME=/usr/lib/jvm/java-8-oracle && \
   export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre && \
