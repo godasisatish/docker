@@ -1,9 +1,5 @@
 FROM tomcat:7
-LABEL satish "satish"
-# Layer: base
-# RUN rm -rf /usr/local/tomcat/webapps/ROOT
-RUN rm -rf /usr/local/tomcat/conf/server.xml
-COPY server.xml /usr/local/tomcat/conf/server.xml
+LABEL godasisatish "godasisatish"
 RUN \
   export JAVA_HOME=/usr/lib/jvm/java-8-oracle && \
   export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre && \
