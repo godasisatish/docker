@@ -1,6 +1,5 @@
 FROM tomcat:8.5
 LABEL godasisatish "godasisatish"
-ENV PATH /docker-java-home/bin:$PATH
 RUN \
   export JAVA_HOME=/usr/lib/jvm/java-8-oracle && \
   export JRE_HOME=/usr/lib/jvm/java-8-oracle/jre && \
@@ -12,8 +11,9 @@ RUN \
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886 && \
   apt-get update -y && \
   apt-get install -y oracle-java8-installer oracle-java8-set-default && \
-  rm -rf /var/lib/apt/lists/* && \
   rm -rf /docker-java-home && \
-  mv /usr/lib/jvm/java-8-oracle /docker-java-home
+  mv /usr/lib/jvm/java-8-oracle /docker-java-home && \
+  rm -rf /var/lib/apt/lists/*
+
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
